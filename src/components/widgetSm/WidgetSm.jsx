@@ -5,6 +5,7 @@ export default function WidgetSm() {
   return (
     <div className="widgetSm">
       <span className="widgetSmTitle">New Join Members</span>
+
       <ul className="widgetSmList">
         <li className="widgetSmListItem">
           <img
@@ -21,6 +22,7 @@ export default function WidgetSm() {
             Display
           </button>
         </li>
+
         <li className="widgetSmListItem">
           <img
             src="https://images.pexels.com/photos/3992656/pexels-photo-3992656.png?auto=compress&cs=tinysrgb&dpr=2&w=500"
@@ -36,6 +38,7 @@ export default function WidgetSm() {
             Display
           </button>
         </li>
+
         <li className="widgetSmListItem">
           <img
             src="https://images.pexels.com/photos/3992656/pexels-photo-3992656.png?auto=compress&cs=tinysrgb&dpr=2&w=500"
@@ -51,6 +54,7 @@ export default function WidgetSm() {
             Display
           </button>
         </li>
+
         <li className="widgetSmListItem">
           <img
             src="https://images.pexels.com/photos/3992656/pexels-photo-3992656.png?auto=compress&cs=tinysrgb&dpr=2&w=500"
@@ -66,6 +70,7 @@ export default function WidgetSm() {
             Display
           </button>
         </li>
+
         <li className="widgetSmListItem">
           <img
             src="https://images.pexels.com/photos/3992656/pexels-photo-3992656.png?auto=compress&cs=tinysrgb&dpr=2&w=500"

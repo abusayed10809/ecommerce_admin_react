@@ -1,3 +1,4 @@
+// "start": "react-scripts --openssl-legacy-provider start",
 
 // function App() {
 //   const admin = useSelector((state) => state.user.currentUser.isAdmin);
@@ -45,15 +46,30 @@ import Sidebar from "./components/sidebar/Sidebar";
 import Topbar from "./components/topbar/Topbar";
 import Home from "./pages/home/Home";
 import "./App.css";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
 function App() {
-  return <div>
-    <Topbar />
-    <div className="container">
-      <Sidebar />
-      <Home />
-    </div>
-  </div>
+  return (
+    <>
+      <Router>
+        <Topbar />
+        <div className="container">
+          <Sidebar />
+          
+          <Routes>
+            <Route path="/" element={<Home />} />
+          </Routes>
+        </div>
+      </Router>
+    </>
+  );
 }
+// return <div>
+// <Topbar />
+// <div className="container">
+//   <Sidebar />
+//   <Home />
+// </div>
+// </div>
 
 export default App;
