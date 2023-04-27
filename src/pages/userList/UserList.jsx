@@ -9,11 +9,17 @@ export default function UserList() {
   const [data, setData] = useState(userRows);
 
   const handleDelete = (id) => {
-    setData(data.filter((item) => item.id !== id));
+    setTimeout(() => {
+      setData(data.filter((item) => item.id !== id));
+    });
   };
-  
+
   const columns = [
-    { field: "id", headerName: "ID", width: 90 },
+    { 
+      field: "id",
+      headerName: "ID",
+      width: 90
+    },
     {
       field: "user",
       headerName: "User",
@@ -27,7 +33,11 @@ export default function UserList() {
         );
       },
     },
-    { field: "email", headerName: "Email", width: 200 },
+    { 
+      field: "email", 
+      headerName: "Email", 
+      width: 200 
+    },
     {
       field: "status",
       headerName: "Status",

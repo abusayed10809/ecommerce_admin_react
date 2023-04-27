@@ -47,6 +47,7 @@ import Topbar from "./components/topbar/Topbar";
 import Home from "./pages/home/Home";
 import "./App.css";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import UserList from "./pages/userList/UserList";
 
 function App() {
   return (
@@ -55,9 +56,11 @@ function App() {
         <Topbar />
         <div className="container">
           <Sidebar />
-          
+
           <Routes>
             <Route path="/" element={<Home />} />
+
+            <Route path="/users" element={<UserList />} />
           </Routes>
         </div>
       </Router>
