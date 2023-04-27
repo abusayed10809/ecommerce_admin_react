@@ -15,10 +15,10 @@ export default function UserList() {
   };
 
   const columns = [
-    { 
+    {
       field: "id",
       headerName: "ID",
-      width: 90
+      width: 90,
     },
     {
       field: "user",
@@ -33,10 +33,10 @@ export default function UserList() {
         );
       },
     },
-    { 
-      field: "email", 
-      headerName: "Email", 
-      width: 200 
+    {
+      field: "email",
+      headerName: "Email",
+      width: 200,
     },
     {
       field: "status",
@@ -76,6 +76,7 @@ export default function UserList() {
         columns={columns}
         pageSize={8}
         checkboxSelection
+        rowsPerPageOptions={[8]}
       />
     </div>
   );

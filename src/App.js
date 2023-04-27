@@ -53,31 +53,65 @@ import NewUser from "./pages/newUser/NewUser";
 import ProductList from "./pages/productList/ProductList";
 import Product from "./pages/product/Product";
 import NewProduct from "./pages/newProduct/NewProduct";
+import Login from "./pages/login/Login";
+import { useSelector } from "react-redux";
+
+function LoadDashboard({ newRoute }) {
+  return (
+    <>
+      <Topbar />
+      <div className="container">
+        <Sidebar />
+        {newRoute}
+      </div>
+    </>
+  );
+}
 
 function App() {
+  const admin = useSelector((state) => state.user.currentUser.isAdmin);
   return (
     <>
       <Router>
-        <Topbar />
-        <div className="container">
-          <Sidebar />
+        <Routes>
+          <Route path="/login" element={<Login />} />
 
-          <Routes>
-            <Route path="/" element={<Home />} />
+          {admin && (
+            <>
+              <Route path="/" element={<LoadDashboard newRoute={<Home />} />} />
 
-            <Route path="/users" element={<UserList />} />
+              <Route
+                path="/users"
+                element={<LoadDashboard newRoute={<UserList />} />}
+              />
 
-            <Route path="/user/:userId" element={<User />} />
+              <Route
+                path="/user/:userId"
+                element={<LoadDashboard newRoute={<User />} />}
+              />
 
-            <Route path="/newUser" element={<NewUser />} />
+              <Route
+                path="/newUser"
+                element={<LoadDashboard newRoute={<NewUser />} />}
+              />
 
-            <Route path="/products" element={<ProductList />} />
+              <Route
+                path="/products"
+                element={<LoadDashboard newRoute={<ProductList />} />}
+              />
 
-            <Route path="/product/:productId" element={<Product />} />
+              <Route
+                path="/product/:productId"
+                element={<LoadDashboard newRoute={<Product />} />}
+              />
 
-            <Route path="/newProduct" element={<NewProduct />} />
-          </Routes>
-        </div>
+              <Route
+                path="/newProduct"
+                element={<LoadDashboard newRoute={<NewProduct />} />}
+              />
+            </>
+          )}
+        </Routes>
       </Router>
     </>
   );
