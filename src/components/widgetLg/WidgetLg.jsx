@@ -38,7 +38,7 @@ export default function WidgetLg() {
 
           {orders &&
             orders.map((order) => (
-              <tr className="widgetLgTr">
+              <tr className="widgetLgTr" key={order._id}>
                 <td className="widgetLgUser">
                   <img
                     src={

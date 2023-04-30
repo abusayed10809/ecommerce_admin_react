@@ -7,8 +7,6 @@ if (localStorage.getItem("persist:root") !== null) {
     .currentUser.accessToken;
 }
 
-console.log(TOKEN);
-
 export const publicRequest = axios.create({
   baseURL: BASE_URL,
 });

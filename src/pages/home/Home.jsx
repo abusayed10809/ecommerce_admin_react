@@ -5,7 +5,8 @@ import { userData } from "../../dummyData";
 import WidgetSm from "../../components/widgetSm/WidgetSm";
 import WidgetLg from "../../components/widgetLg/WidgetLg";
 import { useState } from "react";
-import { useMemo } from "react";
+import { useMemo, useEffect } from "react";
+import { userRequest } from "../../requestMethods";
 
 export default function Home() {
   const [userStats, setUserStats] = useState([]);
@@ -44,11 +45,13 @@ export default function Home() {
     getStats();
   }, [MONTHS]);
 
+  console.log(userStats);
+
   return (
     <div className="home">
       <FeaturedInfo />
       <Chart
-        data={userData}
+        data={userStats}
         title="User Analytics"
         grid
         dataKey="Active User"

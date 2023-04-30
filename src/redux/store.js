@@ -4,6 +4,7 @@ import {
   getDefaultMiddleware,
 } from "@reduxjs/toolkit";
 import userRedux from "./userRedux";
+import productRedux from "./productRedux";
 
 import {
   persistStore,
@@ -24,7 +25,7 @@ const persistConfig = {
   storage,
 };
 
-const rootReducer = combineReducers({ user: userRedux });
+const rootReducer = combineReducers({ user: userRedux, product: productRedux });
 
 /// persisting reducer with persist config and user redux
 const persistedReducer = persistReducer(persistConfig, rootReducer);
