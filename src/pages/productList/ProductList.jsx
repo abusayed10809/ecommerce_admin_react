@@ -20,7 +20,9 @@ export default function ProductList() {
     getProducts(dispatch);
   }, [dispatch]);
 
-  const handleDelete = (id) => {};
+  const handleDelete = (id) => {
+    deleteProduct(id, dispatch);
+  };
 
   // columns would by default get access to single product item from the product list that has been passed to the table
   const columns = [
